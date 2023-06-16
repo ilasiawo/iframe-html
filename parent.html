@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parent Page</title>
+</head>
+<body>
+  <h1>Parent Page</h1>
+  <input type="text" id="valueInput" placeholder="Enter a value">
+  <button onclick="sendMessage()">Send Message</button>
+  <br><br>
+  <iframe id="childFrame" src="child.html"></iframe>
+
+  <script>
+    function sendMessage() {
+      var value = document.getElementById('valueInput').value;
+      var childFrame = document.getElementById('childFrame');
+      childFrame.src = "child.html?value=" + encodeURIComponent(value);
+    }
+  </script>
+</body>
+</html>

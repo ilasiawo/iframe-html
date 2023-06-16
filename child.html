@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Child Page</title>
+  <script>
+    function getValueFromParent() {
+      var queryString = window.location.search;
+      var urlParams = new URLSearchParams(queryString);
+      var value = urlParams.get('value');
+      if (value) {
+        document.getElementById('valueDisplay').textContent = value;
+      }
+    }
+  </script>
+</head>
+<body onload="getValueFromParent()">
+  <h1>Child Page</h1>
+  <p>Value received from parent:</p>
+  <div id="valueDisplay"></div>
+</body>
+</html>
